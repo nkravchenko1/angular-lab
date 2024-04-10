@@ -1,13 +1,17 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import  {CounterComponent} from './counter/counter.component';
+import {CounterComponent} from "./counter/counter.component";
+
+
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet,CounterComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  standalone: true,
+  styleUrls: ['./app.component.scss'],
+  imports: [
+    CounterComponent,]
 })
 export class AppComponent {
-  title = 'angular-lab';
+  onValueChange(value: number) {
+    console.log(`Value changed to: ${value}`);
+  }
 }
