@@ -1,17 +1,23 @@
 import { Component } from '@angular/core';
-import {CounterComponent} from "./counter/counter.component";
+import { RouterOutlet } from '@angular/router';
+import { CounterComponent } from "./counter/counter.component";
 
+import { UserListComponent } from './user-list/user-list.component';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
   standalone: true,
-  styleUrls: ['./app.component.scss'],
-  imports: [
-    CounterComponent,]
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.scss',
+  imports: [RouterOutlet, CounterComponent, UserListComponent]
 })
 export class AppComponent {
-  onValueChange(value: number) {
-    console.log(`Value changed to: ${value}`);
+  title = 'angularapp';
+
+  handleInputValue(value: string) {
+    console.log(value);
   }
+
+  users = ["shota","gela","vaja","nika","dato","Shalo","melo",'sofo'];
+
 }

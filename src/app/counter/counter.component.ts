@@ -1,32 +1,27 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+
 
 @Component({
   selector: 'app-counter',
-  standalone: true,
+  standalone: true, 
   imports: [],
   templateUrl: './counter.component.html',
-  styleUrl: './counter.component.scss'
+  styleUrls: ['./counter.component.scss' ]
 })
 export class CounterComponent {
-  @Input() initialValue: number = 0;
-  @Output() valueChange: EventEmitter<number> = new EventEmitter<number>();
 
+  @Input() initialValue: number = 0; 
+  @Output() valueChanged = new EventEmitter<number>(); 
 
-public count: number;
-
-  constructor() {
-    this.count = this.initialValue;
-  }
+  counterValue: number = this.initialValue;
 
   increment() {
-    this.count++;
-    this.valueChange.emit(this.count);
-
+    this.counterValue++;
+    this.valueChanged.emit(this.counterValue); 
   }
 
   decrement() {
-    this.count--;
-    this.valueChange.emit(this.count);
-
+    this.counterValue--;
+    this.valueChanged.emit(this.counterValue); 
   }
 }
