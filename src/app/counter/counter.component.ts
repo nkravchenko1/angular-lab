@@ -1,27 +1,24 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
 
+import { Component } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-counter',
-  standalone: true, 
-  imports: [],
+  standalone: true,
+  imports: [MatButtonModule],
   templateUrl: './counter.component.html',
-  styleUrls: ['./counter.component.scss' ]
+  styleUrl: './counter.component.scss'
 })
 export class CounterComponent {
+  number: number = 0;
 
-  @Input() initialValue: number = 0; 
-  @Output() valueChanged = new EventEmitter<number>(); 
-
-  counterValue: number = this.initialValue;
-
-  increment() {
-    this.counterValue++;
-    this.valueChanged.emit(this.counterValue); 
+  increase() {
+    this.number++;
   }
 
-  decrement() {
-    this.counterValue--;
-    this.valueChanged.emit(this.counterValue); 
+  decrease() {
+    
+      this.number--;
+    
   }
 }

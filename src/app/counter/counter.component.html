@@ -1,6 +1,10 @@
-<button (click)="decrement()">-</button>
-<span>{{ counterValue }}</span>
-<button (click)="increment()">+</button>
+<div style="display: flex; flex-direction: row; align-items: center;">
+  <button mat-flat-button color="warn" (click)="increase()">+</button>
+  <p
+    style="width: 40px; height: 20px; border: 4px solid red; text-align: center; margin: 0 10px; font-size: 16px; font-weight: bold; align-self: center;">
+    {{ number }}</p>
+  <button mat-flat-button color="warn" (click)="decrease()">-</button>
+</div>
 
 <style> 
 
