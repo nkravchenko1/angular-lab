@@ -1,0 +1,12 @@
+<form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+  <label for="firstName">First Name:</label>
+  <input id="firstName" formControlName="firstName">
+  
+  <label for="lastName">Last Name:</label>
+  <input id="lastName" formControlName="lastName">
+  
+  <label for="email">Email:</label>
+  <input id="email" formControlName="email">
+  
+  <button type="submit">Submit</button>
+</form>

@@ -1,27 +1,11 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { CounterComponent } from "./counter/counter.component";
-
-import { UserListComponent } from './user-list/user-list.component';
-import { MatListModule } from '@angular/material/list';
-import { MatButtonModule } from '@angular/material/button';
-
+import { RegistrationFormComponent } from './registration-form.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
-  imports: [RouterOutlet, CounterComponent, UserListComponent,MatListModule,
-    MatButtonModule]
+  imports: [RegistrationFormComponent],
+  template: '<app-registration-form></app-registration-form>',
+  styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  title = 'angularapp';
-
-  handleInputValue(value: string) {
-    console.log(value);
-  }
-
-  users = ["shota","gela","vaja","nika","dato","Shalo","melo",'sofo'];
-
-}
+export class AppComponent { }

@@ -1,0 +1,75 @@
+$primary-color: #007bff;
+$primary-hover-color: #0056b3;
+$error-color: red;
+$input-border-color: #ccc;
+$input-focus-color: $primary-color;
+$form-background-color: #f9f9f9;
+$form-border-color: #ddd;
+$disabled-background-color: #ccc;
+
+@mixin input-styles {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  border: 1px solid $input-border-color;
+  border-radius: 4px;
+  font-size: 1em;
+
+  &:focus {
+    border-color: $input-focus-color;
+    outline: none;
+    box-shadow: 0 0 4px rgba($primary-color, 0.5);
+  }
+}
+
+form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid $form-border-color;
+  border-radius: 8px;
+  background-color: $form-background-color;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+
+  div {
+    margin-bottom: 16px;
+  }
+
+  input, select, button {
+    @include input-styles;
+  }
+
+  
+  button {
+    background-color: $primary-color;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+
+    &:hover {
+      background-color: $primary-hover-color;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    &:disabled {
+      background-color: $disabled-background-color;
+      cursor: not-allowed;
+      box-shadow: none;
+    }
+  }
+
+  label {
+    font-weight: bold;
+    margin-bottom: 4px;
+  }
+
+
+  .error {
+    color: $error-color;
+    font-size: 0.875em;
+    margin-top: 4px;
+  }
+}
